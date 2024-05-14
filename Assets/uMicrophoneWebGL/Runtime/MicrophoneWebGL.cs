@@ -125,6 +125,7 @@ public class MicrophoneWebGL : MonoBehaviour
                 deviceId = Lib.GetDeviceId(i),
                 label = Lib.GetLabel(i),
                 sampleRate = Lib.GetSampleRate(i),
+                channelCount = Lib.GetChannelCount(i),
             };
             
             Debug.Log($"Device[{i}]: {device.label} (sampleRate: {device.sampleRate}, ID: {device.deviceId})");
