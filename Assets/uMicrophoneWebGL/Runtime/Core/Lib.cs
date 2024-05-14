@@ -178,6 +178,13 @@ public static class Lib
 #endif
 
 #if UNITY_WEBGL && !UNITY_EDITOR
+    [DllImport("__Internal", EntryPoint = "uMicrophoneWebGL_GetChannelCount")]
+    public static extern int GetChannelCount(int index);
+#else
+    public static int GetChannelCount(int index) => 1; // Unity only supports mono
+#endif
+
+#if UNITY_WEBGL && !UNITY_EDITOR
     [DllImport("__Internal", EntryPoint = "uMicrophoneWebGL_SetDevice")]
     public static extern void SetDevice(int index);
 #else
