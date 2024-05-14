@@ -15,6 +15,7 @@ public class Device
         deviceId = "",
         label = "",
         sampleRate = 0,
+        channelCount = 1,
     };
 }
 
