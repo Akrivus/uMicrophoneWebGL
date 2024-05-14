@@ -46,7 +46,7 @@ const uMicrophoneWebGLPlugin = {
                 const audioTrack = stream.getAudioTracks()[0];
                 const settings = audioTrack.getSettings();
                 device.sampleRate = settings.sampleRate;
-                device.channelCount = settings.channelCount;
+				device.channelCount = settings.channelCount;
                 stream.getTracks().forEach(track => track.stop());
             }
             
@@ -177,6 +177,11 @@ const uMicrophoneWebGLPlugin = {
         const device = uMicrophoneWebGL.getDevice(index);
         return device ? device.sampleRate : 0;
     },
+	
+	uMicrophoneWebGL_GetChannelCount: function(index) {
+		const device = uMicrophoneWebGL.getDevice(index);
+		return device ? device.channelCount : 1;
+	},
     
     uMicrophoneWebGL_SetDevice: function(index) {
         uMicrophoneWebGL.setDevice(index);
