@@ -46,6 +46,7 @@ const uMicrophoneWebGLPlugin = {
                 const audioTrack = stream.getAudioTracks()[0];
                 const settings = audioTrack.getSettings();
                 device.sampleRate = settings.sampleRate;
+                device.channelCount = settings.channelCount;
                 stream.getTracks().forEach(track => track.stop());
             }
             
