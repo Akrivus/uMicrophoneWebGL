@@ -7,6 +7,7 @@ public class Device
     public string deviceId;
     public string label;
     public int sampleRate;
+    public int channelCount;
 
     public static Device invalid = new Device()
     {
